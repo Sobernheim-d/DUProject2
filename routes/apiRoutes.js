@@ -58,6 +58,28 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/distances/:loc1/:loc2", function(req, res) {
+    var loc1 = req.params.loc1;
+    var loc2 = req.params.loc2;
+    console.log(loc1, loc2);
+    geocoder.geocode(loc1)
+    .then(function(result) {
+        console.log(result[0]);
+        geocoder.geocode(loc2)
+        .then(function(result2) {
+            console.log(result2[0]);
+            var distance = geolib.getDistance(
+                {latitude: result[0].latitude, longitude: result[0].longitude},
+                {latitude: result2[0].latitude, longitude: result2[0].longitude},
+            )
+            res.json({a:result[0], b:result2[0], distance: distance});
+        })
+    })
+    .catch(function(err) {
+        res.json(err);
+    })
+});
+
   // Delete an example by id
   app.delete("/api/trips/:id", function(req, res) {
     db.Destination.destroy({ where: { id: req.params.id } }).then(function(
