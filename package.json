@@ -15,11 +15,13 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.0",
     "express-handlebars": "^3.1.0",
-    "geolib": "^3.2.1",
     "mysql2": "^1.6.5",
     "node-geocoder": "^3.27.0",
+<<<<<<< HEAD
     "react": "^16.13.1",
     "react-calendar": "^3.1.0",
+=======
+>>>>>>> 4b46683e2fa1a3289138f2f35e1ac7ccdfa7e15b
     "sequelize": "^5.8.6",
     "unirest": "^0.6.0"
   },

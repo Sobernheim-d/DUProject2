@@ -2,6 +2,7 @@ module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define("User", {
     userName: { type: DataTypes.STRING, allowNull: false },
     homeTown: DataTypes.STRING,
+
     favoriteActivity: DataTypes.STRING,
     favoriteDestination: DataTypes.STRING,
     milesTraveled: { type: DataTypes.INTEGER, defaultValue: 0 },
